@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "create";
+}
+
+<h2>create</h2>
+
+
+@using (Html.BeginForm())
+{
+    <div>@Html.Label("name");</div>
+    <div>@Html.Editor("txtname") ;</div>
+
+    <div>@Html.Label("surname");</div>
+    <div>@Html.Editor("txtsname") ;</div>
+    <div>
+        <input type="submit" value="save" />
+    </div>
+}
