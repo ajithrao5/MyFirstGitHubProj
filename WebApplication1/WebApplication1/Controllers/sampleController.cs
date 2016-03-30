@@ -29,7 +29,7 @@ namespace WebApplication1.Controllers
             s2.name = frm["txtname"];
             s2.surname = frm["txtsname"];
             s2.insertvalues(s2);
-            return View("index");
+            return RedirectToAction("index");
         }
 
         public ActionResult create()
