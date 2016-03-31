@@ -8,9 +8,12 @@
 
 @using (Html.BeginForm())
 {
+    <div>@Html.Label("id");</div>
+    <div>@Html.Editor("txtid") ;</div>
+
     <div>@Html.Label("name");</div>
     <div>@Html.Editor("txtname") ;</div>
-
+    
     <div>@Html.Label("surname");</div>
     <div>@Html.Editor("txtsname") ;</div>
     <div>

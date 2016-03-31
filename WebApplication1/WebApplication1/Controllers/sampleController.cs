@@ -18,7 +18,12 @@ namespace WebApplication1.Controllers
             DataSet ds2= s3.display();
             foreach (DataRow dr in ds2.Tables[0].Rows)
             {
-                objlist.Add(new sample() {name=dr[0].ToString(),surname=dr[1].ToString() } );
+                sample s4 = new sample();
+                s4.id = Convert.ToInt32(dr[0]);
+                s4.name = dr[1].ToString();
+                s4.surname = dr[2].ToString();
+                objlist.Add(s4);
+               // objlist.Add(new sample() {name=dr[0].ToString(),surname=dr[1].ToString() } );
             }
             return View("success",objlist);
         }
@@ -26,6 +31,7 @@ namespace WebApplication1.Controllers
         public ActionResult create(FormCollection frm)
         {
             sample s2 = new sample();
+            s2.id = Convert.ToInt32(frm["txtid"]);
             s2.name = frm["txtname"];
             s2.surname = frm["txtsname"];
             s2.insertvalues(s2);
